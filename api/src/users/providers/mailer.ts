@@ -1,18 +1,22 @@
-import { Injectable } from '@nestjs/common'
-import { MailerService } from '@nestjs-modules/mailer'
-import { JwtService } from '@nestjs/jwt'
+import { Injectable, Logger } from '@nestjs/common';
+import { MailerService } from '@nestjs-modules/mailer';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class MailerProvider {
+  private readonly logger;
+
   constructor(
     private mailerService: MailerService,
-    private jwtService: JwtService
-  ) {}
+    private jwtService: JwtService,
+  ) {
+    this.logger = new Logger();
+  }
   async sendMail(user) {
     const token = await this.jwtService.sign({
       username: user.username,
       sub: user.userId,
-    })
+    });
     return this.mailerService
       .sendMail({
         to: user.username,
@@ -26,9 +30,7 @@ export class MailerProvider {
           </div>`,
       })
       .catch(err => {
-        console.log(err)
-
-        return err
-      })
+        this.logger.verbose(err.message);
+      });
   }
 }
