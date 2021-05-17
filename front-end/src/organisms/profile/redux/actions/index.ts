@@ -1,4 +1,4 @@
-import { getProfile, clearProfile } from './profile'
-import { postUpload, clearUpload } from './upload'
+import { clearProfile, getProfile } from './profile';
+import { clearUpload, postUpload } from './upload';
 
-export { getProfile, clearProfile, postUpload, clearUpload }
+export { getProfile, clearProfile, postUpload, clearUpload };

@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   buttonForm: {
@@ -14,8 +14,8 @@ export const useStyle = makeStyles({
     backgroundColor: '#2962ff',
     '&:hover': {
       transition: '.7s',
-      backgroundColor: '#3fabb5',
-      color: '#2e3b40',
+      backgroundColor: '#b000ff',
+      color: '#fff',
     },
   },
-})
+});

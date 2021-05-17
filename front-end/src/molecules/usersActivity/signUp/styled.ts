@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   root: {
@@ -12,4 +12,4 @@ export const useStyle = makeStyles({
     borderRadius: 15,
     padding: '15px 0',
   },
-})
+});

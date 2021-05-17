@@ -26,7 +26,7 @@ export interface SagaAction {
 
 export interface ReducerSignUpAction {
   type: string
-  payload: reducerSignUp
+  payload: ReducerSignUp
 }
 
-export type reducerSignUp = boolean | UserRes
+export type ReducerSignUp = boolean | UserRes

@@ -1,18 +1,18 @@
-import { call, put, cancelled, takeLatest } from 'redux-saga/effects'
-import { postSignUp } from 'utils/api'
-import { SagaAction } from 'molecules/usersActivity/signUp/redux/types'
+import { SagaAction } from 'molecules/usersActivity/signUp/redux/types';
+import { call, cancelled, put, takeLatest } from 'redux-saga/effects';
+import { postSignUp } from 'utils/api';
 
 function* sagaSignUp(action: SagaAction) {
-  const abortController = new AbortController()
+  const abortController = new AbortController();
   try {
-    const data = yield call(postSignUp, action.body, abortController.signal)
-    yield put({ type: 'FETCH_SIGN_UP', payload: data })
+    const data = yield call(postSignUp, action.body, abortController.signal);
+    yield put({ type: 'FETCH_SIGN_UP', payload: data });
   } catch (e) {
-    yield put({ type: 'ERROR_SIGN_UP', payload: e })
-    if (yield cancelled()) abortController.abort()
+    yield put({ type: 'ERROR_SIGN_UP', payload: e });
+    if (yield cancelled()) abortController.abort();
   }
 }
 
 export function* signUpWatcher() {
-  yield takeLatest('POST_SIGN_UP', sagaSignUp)
+  yield takeLatest('POST_SIGN_UP', sagaSignUp);
 }

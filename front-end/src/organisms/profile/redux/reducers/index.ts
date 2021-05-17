@@ -1,4 +1,4 @@
-import { userProfileReducer } from './profile'
-import { uploadReducer } from './upload'
+import { userProfileReducer } from './profile';
+import { uploadReducer } from './upload';
 
-export { userProfileReducer, uploadReducer }
+export { userProfileReducer, uploadReducer };

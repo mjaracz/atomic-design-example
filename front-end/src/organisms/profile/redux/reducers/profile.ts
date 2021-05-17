@@ -1,4 +1,4 @@
-import { ReducerProfileAction, UserProfileState } from '../types'
+import { ReducerProfileAction, UserProfileState } from '../types';
 
 const initialState = {
   loading: false,
@@ -7,15 +7,18 @@ const initialState = {
     username: '',
   },
   error: '',
-}
-export const userProfileReducer = (state = initialState, action: ReducerProfileAction) => {
+};
+export const userProfileReducer = (
+  state = initialState,
+  action: ReducerProfileAction
+) => {
   switch (action.type) {
     case 'GET_USER_PROFILE': {
       return {
         ...state,
         loading: true,
         error: '',
-      }
+      };
     }
     case 'FETCH_PROFILE': {
       return {
@@ -23,7 +26,7 @@ export const userProfileReducer = (state = initialState, action: ReducerProfileA
         loading: false,
         profile: action.payload,
         error: '',
-      }
+      };
     }
     case 'CLEAR_PROFILE': {
       return {
@@ -31,17 +34,17 @@ export const userProfileReducer = (state = initialState, action: ReducerProfileA
         loading: false,
         profile: { userId: undefined, username: '' },
         error: '',
-      }
+      };
     }
     case 'PROFILE_ERROR': {
       return {
         ...state,
         loading: false,
         error: action.payload,
-      }
+      };
     }
     default: {
-      return state
+      return state;
     }
   }
-}
+};

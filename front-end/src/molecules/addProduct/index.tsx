@@ -1,15 +1,17 @@
-import React, { FC } from 'react'
-import { Redirect } from 'react-router-dom'
-import { DefaultField } from 'atoms/textFields'
-import { ButtonForm } from 'atoms/buttons'
-import { useAddForm } from './hooks/useAddForm'
-import { useStyle } from './styled'
-import { Currency } from './multiSelect/currency'
-import { ProductType } from 'molecules/addProduct/multiSelect/productType'
-import { CircularProgress } from '@material-ui/core'
+import React, { FC } from 'react';
+import { Redirect } from 'react-router-dom';
+
+import { CircularProgress } from '@material-ui/core';
+import { ButtonForm } from 'atoms/buttons';
+import { DefaultField } from 'atoms/textFields';
+import { ProductType } from 'molecules/addProduct/multiSelect/productType';
+
+import { useAddForm } from './hooks/useAddForm';
+import { Currency } from './multiSelect/currency';
+import { useStyle } from './styled';
 
 export const AddProduct: FC = () => {
-  const { productAddForm } = useStyle()
+  const { productAddForm } = useStyle();
   const {
     productNameError,
     priceError,
@@ -22,29 +24,33 @@ export const AddProduct: FC = () => {
     jwtToken,
     loading,
     addProduct,
-  } = useAddForm()
+  } = useAddForm();
   if (addProduct) {
-    return <Redirect to="/products" />
+    return <Redirect to="/products" />;
   }
   if (error === 'Unauthorized' || !jwtToken) {
-    return <Redirect to="/unauthorized" />
+    return <Redirect to="/unauthorized" />;
   }
   return (
     <div className={productAddForm}>
       {loading ? (
-        <CircularProgress size={114} color="primary" />
+        <CircularProgress color="primary" size={114} />
       ) : (
         <>
           <DefaultField
             label="name of product"
-            validation={productNameError}
             saveValue={saveName}
+            validation={productNameError}
           />
-          <DefaultField label="price" validation={priceError} saveValue={savePrice} />
+          <DefaultField
+            label="price"
+            saveValue={savePrice}
+            validation={priceError}
+          />
           <DefaultField
             label="amount of product"
-            validation={quantityError}
             saveValue={saveQuantity}
+            validation={quantityError}
           />
           <Currency />
           <ProductType />
@@ -52,5 +58,5 @@ export const AddProduct: FC = () => {
         </>
       )}
     </div>
-  )
-}
+  );
+};

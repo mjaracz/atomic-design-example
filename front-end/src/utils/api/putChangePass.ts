@@ -1,4 +1,8 @@
-export const putChangePass = (token: string, body: { password: string }, signal: AbortSignal) =>
+export const putChangePass = (
+  token: string,
+  body: { password: string },
+  signal: AbortSignal
+) =>
   fetch('http://localhost:8080/users/change-pass', {
     method: 'PUT',
     headers: {
@@ -10,7 +14,7 @@ export const putChangePass = (token: string, body: { password: string }, signal:
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.statusCode === 401) throw data.error
-      if (data.statusCode === 403) throw data.message
-      else return data
-    })
+      if (data.statusCode === 401) throw data.error;
+      if (data.statusCode === 403) throw data.message;
+      else return data;
+    });

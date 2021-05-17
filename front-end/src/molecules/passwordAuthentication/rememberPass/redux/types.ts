@@ -11,7 +11,7 @@ export interface SagaAction {
 
 export interface ReducerAction {
   type: string
-  payload: reducerPayload
+  payload: ReducerPayload
 }
 
-export type reducerPayload = boolean | string
+export type ReducerPayload = boolean | string

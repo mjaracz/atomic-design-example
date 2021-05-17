@@ -1,4 +1,4 @@
-import { userProfileWatcher } from './profile'
-import { uploadWatcher } from './upload'
+import { userProfileWatcher } from './profile';
+import { uploadWatcher } from './upload';
 
-export { userProfileWatcher, uploadWatcher }
+export { userProfileWatcher, uploadWatcher };

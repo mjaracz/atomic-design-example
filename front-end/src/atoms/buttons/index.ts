@@ -1,4 +1,4 @@
-import { ButtonForm } from './buttonForm'
-import { ButtonHome } from './buttonHome'
+import { ButtonForm } from './buttonForm';
+import { ButtonHome } from './buttonHome';
 
-export { ButtonForm, ButtonHome }
+export { ButtonForm, ButtonHome };

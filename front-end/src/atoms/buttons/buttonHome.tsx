@@ -1,14 +1,22 @@
-import React, { FC } from 'react'
-import { Button } from '@material-ui/core'
-import { Link } from 'react-router-dom'
-import { PropsButtonHome } from './types'
-import { useStyle } from './styled'
+import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
+
+import { Button } from '@material-ui/core';
+
+import { useStyle } from './styled';
+import { PropsButtonHome } from './types';
 
 export const ButtonHome: FC<PropsButtonHome> = ({ label, path }) => {
-  const { buttonHome } = useStyle()
+  const { buttonHome } = useStyle();
   return (
-    <Button className={buttonHome} variant="contained" color="primary" component={Link} to={path}>
+    <Button
+      className={buttonHome}
+      color="primary"
+      component={Link}
+      to={path}
+      variant="contained"
+    >
       {label}
     </Button>
-  )
-}
+  );
+};

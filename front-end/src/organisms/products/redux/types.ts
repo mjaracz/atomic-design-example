@@ -1,13 +1,13 @@
 export interface ProductsState {
   loading: boolean
   list: Product[]
-  addProduct: object
+  addProduct: Product
   error: string
 }
 
 export interface DeleteProductState {
   loading: boolean
-  delete: object
+  delete: Product
   error: string
 }
 
@@ -50,10 +50,10 @@ export interface SagaDeleteAction {
 
 export interface ReducerAction {
   type: string
-  payload: reducerPayload
+  payload: ReducerPayload
 }
 
-export type reducerPayload = boolean | Product[]
+export type ReducerPayload = boolean | Product[]
 
 export interface DeleteQuery {
   userId?: number

@@ -1,18 +1,27 @@
-import React, { FC } from 'react'
-import { Link, Redirect } from 'react-router-dom'
-import { CircularProgress } from '@material-ui/core'
-import { useSignIn } from 'molecules/usersActivity/signIn/hooks/useSignIn'
-import { useStyle } from 'molecules/usersActivity/signIn/styled'
-import { DefaultField, PasswordField } from 'atoms/textFields'
+import React, { FC } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 
-import { ButtonForm } from 'atoms/buttons'
+import { CircularProgress } from '@material-ui/core';
+import { ButtonForm } from 'atoms/buttons';
+import { DefaultField, PasswordField } from 'atoms/textFields';
+import { useSignIn } from 'molecules/usersActivity/signIn/hooks/useSignIn';
+import { useStyle } from 'molecules/usersActivity/signIn/styled';
 
 export const SignIn: FC = () => {
-  const { savePassword, saveEmail, sendSignInReq, passwordError, emailError, loading, goToProfile, jwtToken } = useSignIn()
-  const { root, rememberPassLink } = useStyle()
+  const {
+    savePassword,
+    saveEmail,
+    sendSignInReq,
+    passwordError,
+    emailError,
+    loading,
+    goToProfile,
+    jwtToken,
+  } = useSignIn();
+  const { root, rememberPassLink } = useStyle();
 
   if (goToProfile && jwtToken) {
-    return <Redirect to="profile" />
+    return <Redirect to="profile" />;
   }
   return (
     <div className={root}>
@@ -20,8 +29,16 @@ export const SignIn: FC = () => {
         <CircularProgress color="primary" size={114} />
       ) : (
         <>
-          <DefaultField saveValue={saveEmail} validation={emailError} label="email / username" />
-          <PasswordField savePassword={savePassword} validation={passwordError} label="password" />
+          <DefaultField
+            label="email / username"
+            saveValue={saveEmail}
+            validation={emailError}
+          />
+          <PasswordField
+            label="password"
+            savePassword={savePassword}
+            validation={passwordError}
+          />
           <Link className={rememberPassLink} to="/remember-pass">
             I don't remember password
           </Link>
@@ -29,5 +46,5 @@ export const SignIn: FC = () => {
         </>
       )}
     </div>
-  )
-}
+  );
+};

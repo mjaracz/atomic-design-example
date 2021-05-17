@@ -1,4 +1,4 @@
-import { UserRes } from 'molecules/usersActivity/signUp/redux/types'
+import { UserRes } from 'molecules/usersActivity/signUp/redux/types';
 
 export interface ChangePassState {
   loading: boolean
@@ -14,7 +14,7 @@ export interface SagaAction {
 
 export interface ReducerAction {
   type: string
-  payload: reducerPayload
+  payload: ReducerPayload
 }
 
-export type reducerPayload = boolean | string
+export type ReducerPayload = boolean | string

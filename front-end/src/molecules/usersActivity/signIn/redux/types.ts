@@ -16,7 +16,7 @@ export interface SagaTokenAction {
 
 export interface ReducerTokenAction {
   type: string
-  payload: reducerTokenPayload
+  payload: ReducerTokenPayload
 }
 
-export type reducerTokenPayload = boolean | string
+export type ReducerTokenPayload = boolean | string

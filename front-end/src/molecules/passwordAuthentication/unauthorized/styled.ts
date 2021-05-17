@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   unauthorized: {
@@ -18,4 +18,4 @@ export const useStyle = makeStyles({
       color: '#bc36ff',
     },
   },
-})
+});

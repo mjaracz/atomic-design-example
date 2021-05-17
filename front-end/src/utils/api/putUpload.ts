@@ -6,7 +6,7 @@ export const putUpload = (file: FormData, signal: AbortSignal) =>
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.statusCode >= 400) throw data.message
-      console.log(data)
-      return data
-    })
+      if (data.statusCode >= 400) throw data.message;
+      console.log(data);
+      return data;
+    });

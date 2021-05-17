@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   productAddForm: {
@@ -16,5 +16,5 @@ export const useStyle = makeStyles({
   selectForm: {
     minWidth: 180,
     margin: 15,
-  }
-})
+  },
+});

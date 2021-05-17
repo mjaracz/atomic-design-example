@@ -1,4 +1,4 @@
-import { DeleteQuery } from '../../organisms/products/redux/types'
+import { DeleteQuery } from '../../organisms/products/redux/types';
 
 export const deleteProduct = (
   query: DeleteQuery,
@@ -20,6 +20,6 @@ export const deleteProduct = (
   )
     .then((res) => res.json())
     .then((data) => {
-      if (data.statusCode >= 300) throw data.message
-      return data
-    })
+      if (data.statusCode >= 300) throw data.message;
+      return data;
+    });

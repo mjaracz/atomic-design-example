@@ -1,4 +1,4 @@
-import { Product } from '../redux/types'
+import { Product } from '../redux/types';
 
 export const productMock: Product = {
   _id: '',
@@ -11,7 +11,7 @@ export const productMock: Product = {
   currency: {
     baseCurrency: 'PLN',
     currency: 'EUR',
-    worth: 0
+    worth: 0,
   },
-  type: 'furniture mock'
-}
+  type: 'furniture mock',
+};

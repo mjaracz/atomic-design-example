@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   root: {
@@ -11,7 +11,7 @@ export const useStyle = makeStyles({
     marginTop: 120,
     '& .MuiList-dense': {
       marginTop: 80,
-      paddingButton: '0 !important'
+      paddingButton: '0 !important',
     },
   },
   item: {
@@ -31,4 +31,4 @@ export const useStyle = makeStyles({
   itemDeleteAction: {
     right: 40,
   },
-})
+});

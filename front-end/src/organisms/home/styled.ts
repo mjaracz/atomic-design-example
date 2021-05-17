@@ -1,13 +1,15 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   home: {
+    width: '100vw',
+    height: '100vh',
+  },
+  textWrapper: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 350,
-    height: 550,
   },
   homeText: {
     textAlign: 'center',
@@ -15,7 +17,7 @@ export const useStyle = makeStyles({
     color: '#fff',
   },
   textDistinction: {
-    color: '#3fabb5',
+    color: '#00aeff',
   },
   buttonContainer: {
     display: 'flex',
@@ -23,4 +25,4 @@ export const useStyle = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
-})
+});

@@ -1,8 +1,10 @@
-import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import { BrowserRouter } from 'react-router-dom'
-import { SignIn } from 'molecules/usersActivity/signIn/index'
-import { StoreProvider } from '../../utils/unitTest/storeProvider'
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+
+import { fireEvent, render } from '@testing-library/react';
+import { SignIn } from 'molecules/usersActivity/signIn/index';
+
+import { StoreProvider } from '../../utils/unitTest/storeProvider';
 
 describe('<FormField/>', () => {
   describe('when StoreProvider was mount ', () => {
@@ -13,10 +15,10 @@ describe('<FormField/>', () => {
             <SignIn />
           </StoreProvider>
         </BrowserRouter>
-      )
+      );
 
-      expect(baseElement).toBeDefined()
-      expect(baseElement).toMatchSnapshot()
-    })
-  })
-})
+      expect(baseElement).toBeDefined();
+      expect(baseElement).toMatchSnapshot();
+    });
+  });
+});

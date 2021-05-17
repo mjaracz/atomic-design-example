@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   root: {
@@ -17,4 +17,4 @@ export const useStyle = makeStyles({
   textDistinction: {
     color: '#bc36ff',
   },
-})
+});

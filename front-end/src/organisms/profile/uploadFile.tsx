@@ -1,35 +1,47 @@
-import React, { FC } from 'react'
-import { useStyle } from './styled'
-import { ReactComponent as IconUpload } from '../../assets/upload.svg'
-import { UploadProps } from './types'
-import { CircularProgress } from '@material-ui/core'
+import React, { FC, ReactElement } from 'react';
 
-export const UploadFile: FC<UploadProps> = ({
-  onChangeUpload,
-  upload,
-}) => {
-  const { uploadForm, uploadContainer, profileText } = useStyle()
-  return (
-    <div className={uploadContainer}>
-      {upload.loading ? (
-        <CircularProgress color="secondary" size={42} />
-      ) : upload.file ? (
-        <p className={profileText}>file was <span style={{color: '#bc36ff'}}> successful </span>uploaded</p>
-      ) : (
-        <>
-          <input
-            type="file"
-            name="file"
-            id="file"
-            className={uploadForm}
-            onChange={onChangeUpload}
-          />
-          <label htmlFor="file">
-            <IconUpload />
-            <span>Choose SVG file&hellip;</span>
-          </label>
-        </>
-      )}
-    </div>
-  )
-}
+import { CircularProgress } from '@material-ui/core';
+
+import { ReactComponent as IconUpload } from '../../assets/upload.svg';
+import { useStyle } from './styled';
+import { UploadProps } from './types';
+
+export const UploadFile: FC<UploadProps> = ({ onChangeUpload, upload }) => {
+  const { uploadForm, uploadContainer, profileText } = useStyle();
+  
+  function wrapElement(wrappedElement: ReactElement): ReactElement {
+    return (
+      <div className={uploadContainer}>
+        { wrappedElement }
+      </div>
+    );
+  }
+  
+  if (upload.loading) {
+    return wrapElement(<CircularProgress color="secondary" size={42} />);
+  }
+  if (upload.file) {
+    return wrapElement(
+      <p className={profileText}>
+        file was <span style={{ color: '#bc36ff' }}>successful </span>
+        uploaded
+      </p>
+    );
+  }
+  
+  return wrapElement(
+    <>
+      <input
+        className={uploadForm}
+        id="file"
+        name="file"
+        onChange={onChangeUpload}
+        type="file"
+      />
+      <label htmlFor="file">
+        <IconUpload />
+        <input type="file" value='Choose SVG file&hellip;'/>
+      </label>
+    </>
+  );
+};

@@ -1,4 +1,4 @@
-import { listProductsReducer } from './products'
-import { deleteProductReducer } from './delete'
+import { deleteProductReducer } from './delete';
+import { listProductsReducer } from './products';
 
-export { listProductsReducer, deleteProductReducer }
+export { listProductsReducer, deleteProductReducer };

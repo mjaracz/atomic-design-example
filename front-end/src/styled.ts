@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   root: {
@@ -8,4 +8,4 @@ export const useStyle = makeStyles({
     height: '100vh',
     width: '100vw',
   },
-})
+});

@@ -11,6 +11,6 @@ export const getUserProfile = (token: string, signal: AbortSignal) =>
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.statusCode === 401) throw data.error
-      else return data
-    })
+      if (data.statusCode === 401) throw data.error;
+      else return data;
+    });

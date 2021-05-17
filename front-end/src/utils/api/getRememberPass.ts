@@ -8,6 +8,6 @@ export const getRememberPass = (username: string, signal: AbortSignal) =>
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.statusCode === 401) throw data.message
-      else return data
-    })
+      if (data.statusCode === 401) throw data.message;
+      else return data;
+    });

@@ -1,4 +1,4 @@
-import { ReqBody } from 'molecules/usersActivity/signIn/redux/types'
+import { ReqBody } from 'molecules/usersActivity/signIn/redux/types';
 
 export const postAuthLogin = async (body: ReqBody, signal: AbortSignal) =>
   fetch('http://localhost:8080/auth/login', {
@@ -13,6 +13,6 @@ export const postAuthLogin = async (body: ReqBody, signal: AbortSignal) =>
   })
     .then((res) => res.json())
     .then((data) => {
-      if (data.statusCode === 401) throw data.error
-      else return data
-    })
+      if (data.statusCode === 401) throw data.error;
+      else return data;
+    });

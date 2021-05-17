@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles'
+import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles({
   profile: {
@@ -49,4 +49,4 @@ export const useStyle = makeStyles({
   uploadContainer: {
     padding: 24,
   },
-})
+});

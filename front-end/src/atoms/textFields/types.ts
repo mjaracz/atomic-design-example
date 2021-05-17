@@ -1,6 +1,6 @@
-import { ChangeEvent } from 'react'
+import { ChangeEvent } from 'react';
 
-export type onChangeCallback = (event: ChangeEvent<HTMLInputElement>) => void
+export type OnChangeCallback = (event: ChangeEvent<HTMLInputElement>) => void
 
 export interface ValidationError {
   isError: boolean
@@ -8,13 +8,13 @@ export interface ValidationError {
 }
 
 export interface FieldProps {
-  saveValue: onChangeCallback
+  saveValue: OnChangeCallback
   validation: ValidationError
   label: string
 }
 
 export interface PasswordProps {
-  savePassword: onChangeCallback
+  savePassword: OnChangeCallback
   validation: ValidationError
   label: string
 }

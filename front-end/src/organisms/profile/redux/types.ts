@@ -5,17 +5,17 @@ export interface SagaProfileAction {
 
 export interface ReducerProfileAction {
   type: string
-  payload: profilePayload
+  payload: ProfilePayload
 }
 
-export type profilePayload = boolean | string | profile
+export type ProfilePayload = boolean | string | Profile
 
 export interface ReducerUploadAction {
   type: string
-  payload: uploadPayload
+  payload: UploadPayload
 }
 
-export type uploadPayload = boolean | string | File
+export type UploadPayload = boolean | string | File
 
 export interface UploadState {
   file: FormData
@@ -25,11 +25,11 @@ export interface UploadState {
 
 export interface UserProfileState {
   loading: boolean
-  profile: profile
+  profile: Profile
   error: string
 }
 
-export type profile = {
+export type Profile = {
   userId: number
   username: string
 }

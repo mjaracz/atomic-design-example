@@ -1,4 +1,4 @@
-import { getProducts, clearProducts } from './products'
-import { deleteProduct, cleanDeleteProduct } from './delete'
+import { cleanDeleteProduct, deleteProduct } from './delete';
+import { clearProducts, getProducts } from './products';
 
-export { getProducts, clearProducts, deleteProduct, cleanDeleteProduct }
+export { getProducts, clearProducts, deleteProduct, cleanDeleteProduct };
