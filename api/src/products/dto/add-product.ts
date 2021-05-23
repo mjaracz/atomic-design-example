@@ -1,5 +1,5 @@
-import { ProductsTypeEnum } from '../interfaces/products-type.enum'
-import { CurrencyEnum } from '../interfaces/currency.enum'
+import { ProductsTypeEnum } from '../models/products-type.enum'
+import { CurrencyEnum } from '../models/currency.enum'
 
 export class AddProductDto {
   readonly userId: number

@@ -1,7 +1,7 @@
-import * as mongoose from 'mongoose'
-import { CurrencySchema } from './products-currency'
+import * as mongoose from 'mongoose';
+import { CurrencySchema } from './products-currency';
 
-export const ProductsSchema = mongoose.Schema({
+export const ProductsSchema = new mongoose.Schema({
   productId: Number,
   userId: Number,
   name: String,
@@ -10,4 +10,4 @@ export const ProductsSchema = mongoose.Schema({
   description: String,
   currency: CurrencySchema,
   type: String,
-})
+});

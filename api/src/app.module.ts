@@ -1,14 +1,15 @@
-import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter'
-import { Module } from '@nestjs/common'
-import { MongooseModule } from '@nestjs/mongoose'
-import { AppController } from './app.controller'
-import { AuthModule } from './auth/auth.module'
-import { UsersModule } from './users/users.module'
-import { ProductsModule } from './products/products.module'
-import { MailerModule } from '@nestjs-modules/mailer'
-import { CsvModule } from './csv/csv.module'
+import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { AppController } from './app.controller';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { ProductsModule } from './products/products.module';
+import { MailerModule } from '@nestjs-modules/mailer';
+import { CsvModule } from './csv/csv.module';
 
-require('dotenv').config()
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('dotenv').config();
 
 @Module({
   imports: [

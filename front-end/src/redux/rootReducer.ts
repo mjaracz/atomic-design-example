@@ -1,10 +1,16 @@
-import { combineReducers } from 'redux'
-import { signInReducer } from '../signIn/redux/reducers'
-import { signUpReducer } from '../signUp/redux/reducers'
-import { rememberPassReducer } from '../rememberPass/redux/reducers'
-import { changePassReducer } from '../changePass/redux/reducers'
-import { deleteProductReducer, listProductsReducer } from '../products/redux/reducers'
-import { uploadReducer, userProfileReducer } from '../profile/redux/reducers'
+import { changePassReducer } from 'molecules/passwordAuthentication/changePass/redux/reducers';
+import { rememberPassReducer } from 'molecules/passwordAuthentication/rememberPass/redux/reducers';
+import { signInReducer } from 'molecules/usersActivity/signIn/redux/reducers';
+import { signUpReducer } from 'molecules/usersActivity/signUp/redux/reducers';
+import {
+  deleteProductReducer,
+  listProductsReducer,
+} from 'organisms/products/redux/reducers';
+import {
+  uploadReducer,
+  userProfileReducer,
+} from 'organisms/profile/redux/reducers';
+import { combineReducers } from 'redux';
 
 export const rootReducer = combineReducers({
   signIn: signInReducer,
@@ -15,4 +21,4 @@ export const rootReducer = combineReducers({
   products: listProductsReducer,
   productDelete: deleteProductReducer,
   upload: uploadReducer,
-})
+});
