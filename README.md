@@ -1,82 +1,44 @@
-<h1>Prerequisites</h1>
+This project was bootstrapped with [Create React Index](https://github.com/facebook/create-react-app).
 
-```
+## Available Scripts
 
-npm: v.6.14.5
-node: v14.04.0
-docker: v.19.03.11
-docker-compose: 1.25.0
-tslint: 6.1.2
-migrate-mongo: 7.2.1
+In the project directory, you can run:
 
-```
+### `yarn start`
 
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Database
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-First of all we have to start our's database <br> which is mongodb by typing command in root project directory <br>
-NOTE: install [docker ecosystem](https://docs.docker.com/engine/install/#server) before 
+### `yarn test`
 
-#### `docker-compose -f api/.docker/docker-compose.yml up`
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Next, it would be useful to fill our database with data.
-You can use the migration scripts from the api/migrations directory. Commands available in the migrate-mongo package listed in prerequisites, you have to install globally [this package](https://www.npmjs.com/package/migrate-mongo) before you can use when you have this package installed just type in the root directory
+### `yarn build`
 
-#### `cd api/ && migrate-mongo up`
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-## Launch backend
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-To launch project backend api, first open terminal in rootDir/api then install dependency and run start script
+### `yarn eject`
 
-#### `npm install && sudo npm run start`
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-## Launch frontend
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Fianlly after all of above steps we can simple start front-end. Just open new terminal window and then in root directory type
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-#### `cd fron-end/ && npm install`
-#### `npm run start`
-### Sign-in credentials tested mood
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```
-username: john@gmail.com
-password: changeme
-```
+## Learn More
 
-#### Note: 
-when you will test applications manually, just remember that when you go to the component called 'recall password' it is important that you create a username before with a real email address, so that the script in the application can send a message to an existing mailbox
-<br>
-<br>
+You can learn more in the [Create React Index documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-# Unit Test
-
-### Aviable Scripts Front-end
-#### `npm run test`
-update snapshot
-#### `sudo npm run test -- -u`
-coverage raport
-#### `sudo npm run test -- --coverage`
-### Aviable Scripts Back-end
-#### `sudo npm run test`
-
-<br>
-
-# Environment Variables
-For testing purpose, create in api/ direcotory file calls .env.local with belowe content
-
-```
-JWT_SECRET="secretKey"
-SALT_ROUND=9
-EMAIL_ID=nom46207@gmail.com
-EMAIL_PASS=changeme46207
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EXTEND_ESLINT=true
-```
-<br>
-and the same file name for front-end/ direcotry with belowe content
-
-```
-EXTEND_ESLINT=true
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
