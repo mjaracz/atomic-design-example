@@ -1,7 +1,8 @@
 import { ReqBody } from 'molecules/usersActivity/signIn/redux/types';
+import { constants } from './constants';
 
 export const postSignUp = (body: ReqBody, signal: AbortSignal) =>
-  fetch('http://localhost:8080/users', {
+  fetch(`${constants.baseUrl}/users`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

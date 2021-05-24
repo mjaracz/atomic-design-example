@@ -1,5 +1,7 @@
+import { constants } from "./constants";
+
 export const getProducts = (token: string, signal: AbortSignal) =>
-  fetch('http://localhost:8080/products', {
+  fetch(`${constants.baseUrl}/products`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

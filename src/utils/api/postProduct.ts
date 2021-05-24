@@ -1,11 +1,12 @@
 import { ReqBodyProduct } from '../../organisms/products/redux/types';
+import { constants } from './constants';
 
 export const postProduct = (
   body: ReqBodyProduct,
   token: string,
   signal: AbortSignal
 ) =>
-  fetch('http://localhost:8080/products', {
+  fetch(`${constants.baseUrl}/products`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

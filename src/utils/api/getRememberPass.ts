@@ -1,5 +1,7 @@
+import { constants } from "./constants";
+
 export const getRememberPass = (username: string, signal: AbortSignal) =>
-  fetch(`http://localhost:8080/users/remember-password?username=${username}`, {
+  fetch(`${constants.baseUrl}/users/remember-password?username=${username}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

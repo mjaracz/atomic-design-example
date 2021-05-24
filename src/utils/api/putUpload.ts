@@ -1,5 +1,7 @@
+import { constants } from "./constants";
+
 export const putUpload = (file: FormData, signal: AbortSignal) =>
-  fetch('http://localhost:8080/csv/upload', {
+  fetch(`${constants.baseUrl}/csv/upload`, {
     method: 'PUT',
     body: file,
     signal,

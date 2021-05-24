@@ -1,5 +1,7 @@
+import { constants } from "./constants";
+
 export const getUserProfile = (token: string, signal: AbortSignal) =>
-  fetch('http://localhost:8080/profile', {
+  fetch(`${constants.baseUrl}/profile`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

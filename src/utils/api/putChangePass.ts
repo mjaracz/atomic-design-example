@@ -1,9 +1,11 @@
+import { constants } from "./constants";
+
 export const putChangePass = (
   token: string,
   body: { password: string },
   signal: AbortSignal
 ) =>
-  fetch('http://localhost:8080/users/change-pass', {
+  fetch(`${constants.baseUrl}/users/change-pass`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
