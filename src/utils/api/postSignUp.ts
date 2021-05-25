@@ -1,4 +1,5 @@
 import { ReqBody } from 'molecules/usersActivity/signIn/redux/types';
+
 import { constants } from './constants';
 
 export const postSignUp = (body: ReqBody, signal: AbortSignal) =>

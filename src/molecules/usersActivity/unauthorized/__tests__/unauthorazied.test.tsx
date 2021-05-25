@@ -2,17 +2,13 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import { render } from '@testing-library/react';
+import { Unauthorized } from 'molecules/usersActivity/unauthorized/index';
 
-import { StoreProvider } from '../../../utils/unitTest/storeProvider';
-import { Profile } from '../index';
-
-describe('<Profile/>', () => {
+describe('<Unauthorized />', () => {
   it('should be defined and match snapshot', () => {
     const { baseElement } = render(
       <BrowserRouter>
-        <StoreProvider>
-          <Profile />
-        </StoreProvider>
+        <Unauthorized />
       </BrowserRouter>
     );
     expect(baseElement).toBeDefined();

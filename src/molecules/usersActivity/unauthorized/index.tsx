@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import { useStyle } from 'molecules/passwordAuthentication/unauthorized/styled';
+import { useStyle } from 'molecules/usersActivity/unauthorized/styled';
 
 export const Unauthorized: FC = () => {
   const { unauthorized, unauthorizedText } = useStyle();

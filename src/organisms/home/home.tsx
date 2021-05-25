@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import { ButtonHome } from 'atoms/buttons';
 import { HomeAppBar } from 'molecules/appBar';
 import { useStyle } from 'organisms/home/styled';
+import { ProductsList } from 'organisms/products';
 
 export const Home: FC = () => {
   const { home, homeText, textDistinction, buttonContainer, textWrapper } =
@@ -25,6 +26,7 @@ export const Home: FC = () => {
           <ButtonHome label="Sign In" path="sign-in" />
         </div>
       </div>
+      <ProductsList />
     </div>
   );
 };

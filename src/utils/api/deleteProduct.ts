@@ -8,7 +8,7 @@ export const deleteProduct = (
 ) => {
   const url = query.userId
     ? `${constants.baseUrl}/products/?user-id=${query.userId}`
-    : `${constants.baseUrl}/products/?product-id=${query.productId}`
+    : `${constants.baseUrl}/products/?product-id=${query.productId}`;
   
   return fetch(
     url,
@@ -25,5 +25,5 @@ export const deleteProduct = (
     .then((data) => {
       if (data.statusCode >= 300) throw data.message;
       return data;
-    })
+    });
 };
