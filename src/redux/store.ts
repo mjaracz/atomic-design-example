@@ -1,14 +1,7 @@
+import { configureStore } from '@reduxjs/toolkit';
 import { applyMiddleware, createStore } from 'redux';
-import createSagaMiddleware from 'redux-saga';
 
 import { rootReducer } from './rootReducer';
 import { rootSaga } from './rootSaga';
 
-const applySagaMiddleware = createSagaMiddleware();
-
-export const store = createStore(
-  rootReducer,
-  applyMiddleware(applySagaMiddleware)
-);
-
-applySagaMiddleware.run(rootSaga);
+export const store = configureStore({ reducer: rootReducer });
