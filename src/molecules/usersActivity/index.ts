@@ -1,3 +1,3 @@
-export * from './signIn';
-export * from './signUp';
-export * from './unauthorized';
+export * from './signIn/singIn';
+export * from './signUp/signUp';
+export * from './unauthorized/unauthorized';

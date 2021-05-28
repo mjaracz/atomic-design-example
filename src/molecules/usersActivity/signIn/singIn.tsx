@@ -40,7 +40,7 @@ export const SignIn: FC = () => {
             validation={passwordError}
           />
           <Link className={rememberPassLink} to="/remember-pass">
-            I don't remember password
+            I don&apos;t remember password
           </Link>
           <ButtonForm label="sign in" sendFormData={sendSignInReq} />
         </>

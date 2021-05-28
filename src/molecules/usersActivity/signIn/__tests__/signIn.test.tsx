@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import { fireEvent, render } from '@testing-library/react';
-import { SignIn } from 'molecules/usersActivity/signIn/index';
+import { SignIn } from 'molecules/usersActivity/signIn/singIn';
 
 import { StoreProvider } from '../../utils/unitTest/storeProvider';
 

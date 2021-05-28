@@ -1,5 +1,5 @@
-import { signInWatcher } from 'molecules/usersActivity/signIn/redux/sagas';
-import { signUpWatcher } from 'molecules/usersActivity/signUp/redux/sagas';
+import { signInWatcher } from 'molecules/usersActivity/signIn';
+import { signUpWatcher } from 'molecules/usersActivity/signUp';
 import { all } from 'redux-saga/effects';
 
 export function* rootSaga() {
