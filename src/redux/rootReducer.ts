@@ -4,7 +4,7 @@ import { signUpReducer } from 'molecules/usersActivity/signUp';
 import { combineReducers } from 'redux';
 
 export const rootReducer = combineReducers({
-  signIn: signInReducer,
-  signUp: signUpReducer,
+  // signIn: signInReducer,
+  // signUp: signUpReducer,
   posts: postsReducer,
 });
