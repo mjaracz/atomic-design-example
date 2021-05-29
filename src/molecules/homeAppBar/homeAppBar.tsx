@@ -15,7 +15,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from '@material-ui/icons/Search';
 import { ButtonHome } from 'atoms/buttons';
-import { useHomeAppBar } from 'molecules/appBar/hooks/useHomeAppBar';
+import { useHomeAppBar } from 'molecules/homeAppBar/hooks/useHomeAppBar';
 
 import { useStyle } from './styled';
 

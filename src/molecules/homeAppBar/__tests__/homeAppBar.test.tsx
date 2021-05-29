@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import { render } from '@testing-library/react';
-import { HomeAppBar } from 'molecules/appBar/homeAppBar';
+import { HomeAppBar } from 'molecules/homeAppBar/homeAppBar';
 import { store } from 'redux/store';
 
 describe('<HomeAppBar />', () => {

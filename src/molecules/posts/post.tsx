@@ -6,8 +6,8 @@ export const Post = ({ description, title }) => {
   const styles = useStyledPost();
   return (
     <div className={styles.postWrapper}>
-      <div>{title}</div>
-      <div>{description}</div>
+      <div className={styles.textWrapper}>{title}</div>
+      <div className={styles.textWrapper}>{description}</div>
     </div>
   );
 };

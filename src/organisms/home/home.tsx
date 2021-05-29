@@ -1,7 +1,10 @@
 import React, { FC } from 'react';
 
-import { HomeAppBar } from 'molecules/appBar';
-import { useStyle } from 'organisms/home/styled';
+import { HomeAppBar } from 'molecules/homeAppBar';
+import { Posts } from 'molecules/posts';
+
+import { useStyle } from './styled';
+
 
 export const Home: FC = () => {
   const { home } =
@@ -9,6 +12,7 @@ export const Home: FC = () => {
   return (
     <div className={home}>
       <HomeAppBar />
+      <Posts />
     </div>
   );
 };
