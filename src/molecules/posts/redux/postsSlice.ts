@@ -1,29 +1,40 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import { useApiClient } from 'utils/useApiClient';
 
-import { fetchPosts } from './asyncActions';
+import { initialState } from './initialState';
 
 const postsSlice = createSlice({
   name: 'posts',
-  initialState: {
-    status: '',
-    posts: [],
-    error: {},
-  },
-  reducers: {},
-  extraReducers: {
-    [fetchPosts.pending.toString()]: (state) => {
+  initialState,
+  reducers: {
+    getPostsList(state) {
       state.status = 'loading';
     },
-    [fetchPosts.fulfilled.toString()]: (state, action) => {
-      state.status = 'successful';
-      state.posts = [...state.posts, ...action.payload];
+    fetchPostsList(state, action) {
+      state.status = 'succesful';
+      state.list = action.payload;
     },
-    [fetchPosts.rejected.toString()]: (state, action) => {
+    errorPostsList(state, action) {
       state.status = 'failed';
-      state.error = { message: action.error.message };
+      state.list = [];
+      state.error = action.payload;
     }
-  }
+  },
 });
 
+export const { getPostsList, fetchPostsList, errorPostsList } = postsSlice.actions;
+
+export const getPostsListThunk = () => async dispatch => {
+  dispatch(getPostsList());
+  const { get } = useApiClient();
+
+  try {
+    const posts = await get('/posts');
+    dispatch(fetchPostsList(posts));
+  }
+  catch (error) {
+    dispatch(errorPostsList(error));
+  }
+};
 
 export default postsSlice.reducer;

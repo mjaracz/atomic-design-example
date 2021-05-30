@@ -1,7 +1,5 @@
-import { SignInState } from 'molecules/usersActivity/signIn';
-import { SignUpState } from 'molecules/usersActivity/signUp';
+import { rootReducer } from './rootReducer';
+import { store } from './store';
 
-export interface RootState {
-  signIn: SignInState
-  signUp: SignUpState
-}
+export type RootState = ReturnType<typeof rootReducer>
+export type AppDispatch = typeof store.dispatch

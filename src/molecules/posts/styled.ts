@@ -21,10 +21,19 @@ export const useStyledPost = makeStyles({
     height: '20vh',
     backgroundColor: '#fff',
     borderRadius: '8px',
-    margin: '2vw'
+    margin: '2vw',
+    padding: '2vw'
   },
-  textWrapper: {
+  textTitle: {
     textAlign: 'left',
     width: '50vw',
+    color: '#b000ff',
+    margin: '6px 0'
+  },
+  textDescription: {
+    margin: '10px 0',
+    textAlign: 'left',
+    width: '50vw',
+    color: '#000'
   }
 });

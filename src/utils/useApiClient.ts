@@ -1,13 +1,12 @@
-export class ApiClient {
-  static readonly baseUrl = 'https://jsonplaceholder.typicode.com';
+export function useApiClient() {
+  const baseUrl = 'https://jsonplaceholder.typicode.com';
 
-  static async get(endUrl: string, signal: AbortSignal) {
-    return fetch(this.baseUrl + endUrl, {
+  const get = async (endUrl: string) =>
+    fetch(baseUrl + endUrl, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
-      },
-      signal
+      }
     })
       .then(res => res.json())
       .then(data => {
@@ -16,5 +15,9 @@ export class ApiClient {
         };
         return data;
       });
-  }
+
+  return {
+    get,
+    baseUrl,
+  };
 }

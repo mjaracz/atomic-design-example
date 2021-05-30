@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { CircularProgress } from '@material-ui/core';
 import { ButtonForm } from 'atoms/buttons';
@@ -14,15 +14,11 @@ export const SignIn: FC = () => {
     sendSignInReq,
     passwordError,
     emailError,
-    loading,
-    goToProfile,
-    jwtToken,
+    loading
   } = useSignIn();
   const { root, rememberPassLink } = useStyle();
 
-  if (goToProfile && jwtToken) {
-    return <Redirect to="profile" />;
-  }
+
   return (
     <div className={root}>
       {loading ? (

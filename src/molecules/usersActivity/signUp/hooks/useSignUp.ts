@@ -56,7 +56,7 @@ export const useSignUp = () => {
     if (password !== rePassword)
       setRePasswordError({
         isError: true,
-        message: "repeat password don't match",
+        message: 'repeat password don\'t match',
       });
     setRePasswordError(checkPassword(rePassword));
     setPasswordError(checkPassword(password));

@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { useStyledPost } from './styled';
 
-export const Post = ({ description, title }) => {
+
+export interface Props {
+  description: string;
+  title: string;
+}
+export const Post: FC<Props> = ({ description, title }) => {
   const styles = useStyledPost();
   return (
     <div className={styles.postWrapper}>
-      <div className={styles.textWrapper}>{title}</div>
-      <div className={styles.textWrapper}>{description}</div>
+      <div className={styles.textTitle}>{title}</div>
+      <div className={styles.textDescription}>{description}</div>
     </div>
   );
 };

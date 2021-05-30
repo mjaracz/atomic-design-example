@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Redirect } from 'react-router-dom';
 
 import { CircularProgress } from '@material-ui/core';
 import { ButtonForm } from 'atoms/buttons';
@@ -21,12 +20,9 @@ export const SignUp: FC = () => {
     rePasswordError,
     nameError,
     surnameError,
-    signUp: { loading, addedUser },
+    signUp: { loading },
   } = useSignUp();
 
-  if (addedUser.userId) {
-    return <Redirect to="/user-info" />;
-  }
   return (
     <div className={root}>
       {loading ? (

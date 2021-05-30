@@ -1,16 +1,25 @@
 import React from 'react';
 
-import { Post } from './post';
+import { CircularProgress } from '@material-ui/core';
 import { useStyledPosts } from './styled';
+
+import { Post } from './post';
+import { usePosts } from './usePosts';
+
 
 export const Posts = () => {
   const styles = useStyledPosts();
+  const { status, posts, error } = usePosts();
+
   return (
     <div className={styles.postsWrapper}>
-      <Post description='description0' title='title0'  />
-      <Post description='description1' title='title1' />
-      <Post description='description2' title='title2' />
-      <Post description='description3' title='title3' />
+      {(status === 'loading') 
+        ? <CircularProgress/>
+        : posts.map(post => {
+          const postKey = `key:${post.id}`;
+          return <Post description={post.body} key={postKey} title={post.title} />;
+        })
+      }
     </div>
   );
 };
