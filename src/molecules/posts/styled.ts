@@ -8,6 +8,9 @@ export const useStyledPosts = makeStyles({
     width: '60vw',
     margin: '0 auto',
     flexWrap: 'wrap',
+  },
+  circleLoading: {
+    margin: '50px 0'
   }
 });
 
@@ -35,5 +38,5 @@ export const useStyledPost = makeStyles({
     textAlign: 'left',
     width: '50vw',
     color: '#000'
-  }
+  },
 });

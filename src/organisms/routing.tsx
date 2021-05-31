@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { PageNotFound } from 'molecules/pageNotFound';
+import { PageNotFound } from 'molecules/pageNotFound/pageNotFound';
 import { SignIn, SignUp } from 'molecules/usersActivity';
 import { Home } from 'organisms/home';
 import { useStyle } from 'styled';

@@ -14,7 +14,7 @@ export const Posts = () => {
   return (
     <div className={styles.postsWrapper}>
       {(status === 'loading') 
-        ? <CircularProgress/>
+        ? <CircularProgress className={styles.circleLoading} size={120} />
         : posts.map(post => {
           const postKey = `key:${post.id}`;
           return <Post description={post.body} key={postKey} title={post.title} />;

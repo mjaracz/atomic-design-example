@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
-import { PageNotFound } from '../index';
+import { PageNotFound } from '../pageNotFound';
 
 describe('<PageNotFound/> ', () => {
   it('should be defined and match snapshot', () => {
