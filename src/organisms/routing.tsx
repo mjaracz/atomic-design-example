@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import { PageNotFound } from 'molecules/pageNotFound/pageNotFound';
-import { SignIn, SignUp } from 'molecules/usersActivity';
-import { Home } from 'organisms/home';
-import { useStyle } from 'styled';
+import { SignIn, SignUp } from 'molecules';
+import { useStyle } from 'useStyles';
+import { Home } from './home';
 
 
 export const Routing: FC = () => {

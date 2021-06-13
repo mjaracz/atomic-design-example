@@ -9,7 +9,7 @@ import { usePosts } from './usePosts';
 
 export const Posts = () => {
   const styles = useStyledPosts();
-  const { status, posts, error } = usePosts();
+  const { status, posts } = usePosts();
 
   return (
     <div className={styles.postsWrapper}>

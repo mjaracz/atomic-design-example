@@ -1,18 +1,21 @@
 import React, { FC } from 'react';
 
-import { HomeAppBar } from 'molecules/homeAppBar';
+import { CustomAppBar } from 'molecules/appBar';
 import { Posts } from 'molecules/posts';
-
-import { useStyle } from './styled';
+import { useStyle } from './useStyles';
+import { SideBar } from '../sideBar';
 
 
 export const Home: FC = () => {
-  const { home } =
+  const styles =
     useStyle();
   return (
-    <div className={home}>
-      <HomeAppBar />
-      <Posts />
+    <div className={styles.home}>
+      <CustomAppBar />
+      <div className={styles.contentWrapper}>
+        <SideBar />
+        <Posts />
+      </div>
     </div>
   );
 };

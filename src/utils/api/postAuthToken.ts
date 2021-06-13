@@ -1,6 +1,4 @@
-import { ReqBody } from 'molecules/usersActivity/signIn/redux/types';
-
-export const postAuthLogin = async (body: ReqBody, signal: AbortSignal) =>
+export const postAuthLogin = async (body, signal: AbortSignal) =>
   fetch('http://localhost:8080/auth/login', {
     method: 'POST',
     headers: {

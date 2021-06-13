@@ -9,7 +9,6 @@ export const usePosts = () => {
   const dispatch = useDispatch<AppDispatch>();
   const status = useSelector((state: RootState) => state.posts.status);
   const posts = useSelector((state: RootState) => state.posts.list);
-  const error = useSelector((state: RootState) => state.posts.error);
 
   useEffect(() => {
     if (status === 'idle') {
@@ -20,6 +19,5 @@ export const usePosts = () => {
   return {
     status,
     posts,
-    error,
   };
 };

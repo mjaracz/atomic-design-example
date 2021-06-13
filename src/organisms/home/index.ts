@@ -1,2 +1,2 @@
 export { Home } from './home';
-export { useStyle as useStyleHome } from './styled';
+export { useStyle as useStyleHome } from './useStyles';
