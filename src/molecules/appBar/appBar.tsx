@@ -14,39 +14,63 @@ import MailIcon from '@material-ui/icons/Mail';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from '@material-ui/icons/Search';
+import MenuIcon from '@material-ui/icons/Menu';
+
 import { ButtonHome } from 'atoms/buttons';
 import { useHomeAppBar } from 'molecules/appBar/hooks/useHomeAppBar';
-
 import { useStyle } from './useStyles';
 
 export function CustomAppBar() {
   const styles = useStyle();
   const {
-    anchorEl,
-    isMenuOpen,
+    anchorProfile,
+    anchorPages,
+    isProfileMenuOpen,
+    isPagesMenuOpen,
     mobileMoreAnchorEl,
     isMobileMenuOpen,
-    handleMenuClose,
+    handleProfileMenuClose,
+    handlePagesMenuClose,
     handleMobileMenuClose,
     handleMobileMenuOpen,
     handleProfileMenuOpen,
+    handlePagesMenuOpen,
   } = useHomeAppBar();
 
   const menuId = 'primary-search-account-menu';
-  const renderMenu = (
+  const renderProfileMenu = (
     <Menu
-      anchorEl={anchorEl}
+      anchorEl={anchorProfile}
       anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       id={menuId}
       keepMounted
-      onClose={handleMenuClose}
-      open={isMenuOpen}
+      onClose={handleProfileMenuClose}
+      open={isProfileMenuOpen}
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
     >
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={handleProfileMenuClose}>
         <ButtonHome label="sign in" path="/sign-in" />
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>
+      <MenuItem onClick={handleProfileMenuClose}>
+        <ButtonHome label="sign up" path="/sign-up" />
+      </MenuItem>
+    </Menu>
+  );
+
+  const renderPagesMenu = (
+    <Menu
+      anchorEl={anchorPages}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={menuId}
+      keepMounted
+      onClose={handlePagesMenuClose}
+      open={isPagesMenuOpen}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+    >
+      <MenuItem>
+        <span>handle pages menu</span>
+      </MenuItem>
+      <MenuItem >
         <ButtonHome label="sign up" path="/sign-up" />
       </MenuItem>
     </Menu>
@@ -97,6 +121,15 @@ export function CustomAppBar() {
     <div className={styles.grow}>
       <AppBar className={styles.header} position="static">
         <Toolbar>
+          <IconButton
+            aria-label="open drawer"
+            className={styles.menuButton}
+            color="inherit"
+            edge="start"
+            onClick={handlePagesMenuOpen}
+          >
+            <MenuIcon />
+          </IconButton>
           <IconButton
             aria-label="open drawer"
             className={styles.menuButton}
@@ -158,7 +191,8 @@ export function CustomAppBar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
+      {renderProfileMenu}
+      {renderPagesMenu}
     </div>
   );
 }
