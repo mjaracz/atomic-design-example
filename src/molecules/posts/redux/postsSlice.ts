@@ -24,7 +24,7 @@ const postsSlice = createSlice({
 
 export const { getPostsList, fetchPostsList, errorPostsList } = postsSlice.actions;
 
-export const getPostsListThunk = () => async dispatch => {
+export const getPostsListAsync = () => async dispatch => {
   dispatch(getPostsList());
   const { get } = useApiClient();
 

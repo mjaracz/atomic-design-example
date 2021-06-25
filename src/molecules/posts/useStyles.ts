@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
-export const useStyledPosts = makeStyles({
+export const useStylePosts = makeStyles({
   postsWrapper: {
     display: 'flex',
     justifyContent: 'center',
@@ -14,7 +14,7 @@ export const useStyledPosts = makeStyles({
   }
 });
 
-export const useStyledPost = makeStyles({
+export const useStylePost = makeStyles({
   postWrapper: {
     display: 'flex',
     justifyContent: 'center',

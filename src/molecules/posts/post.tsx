@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { useStyledPost } from './styled';
+import { useStylePost } from './useStyles';
 
 
 export interface Props {
@@ -8,7 +8,7 @@ export interface Props {
   title: string;
 }
 export const Post: FC<Props> = ({ description, title }) => {
-  const styles = useStyledPost();
+  const styles = useStylePost();
   return (
     <div className={styles.postWrapper}>
       <div className={styles.textTitle}>{title}</div>

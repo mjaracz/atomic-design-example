@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { AppDispatch, RootState } from 'redux/types';
 
-import { getPostsListThunk } from './redux/postsSlice';
+import { getPostsListAsync } from './redux/postsSlice';
 
 export const usePosts = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -12,7 +12,7 @@ export const usePosts = () => {
 
   useEffect(() => {
     if (status === 'idle') {
-      dispatch(getPostsListThunk());
+      dispatch(getPostsListAsync());
     }
   }, [status, dispatch]);
 
