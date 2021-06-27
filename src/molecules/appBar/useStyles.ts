@@ -6,6 +6,15 @@ export const useStyle = makeStyles((theme: Theme) =>
     header: {
       width: '100vw',
       backgroundColor: '#2962ff',
+      animation: '$logoEffect infinite 1.5s linear'
+    },
+    '@keyframes logoEffect': {
+      '0%': {
+        filter: 'hue-rotate(45deg)',
+      },
+      '100%': {
+        filter: 'hue-rotate(0)',
+      },
     },
     grow: {
       flexGrow: 1,
