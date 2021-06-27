@@ -33,6 +33,7 @@
     "no-param-reassign": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/extensions": "off",
+    "import/order": "off",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-use-before-define": "off",
@@ -74,13 +75,7 @@
       "never"
     ],
     "semi": "warn",
-    "sort-imports": [
-      "warn",
-      {
-        "ignoreCase": true,
-        "ignoreDeclarationSort": true
-      }
-    ]
+    "sort-imports": "off"
   },
   "settings": {
     "react": {
