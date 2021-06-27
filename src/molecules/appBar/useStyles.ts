@@ -6,9 +6,9 @@ export const useStyle = makeStyles((theme: Theme) =>
     header: {
       width: '100vw',
       backgroundColor: '#2962ff',
-      animation: '$logoEffect infinite 1.5s linear'
+      animation: '$appBarEffect infinite 1.5s linear'
     },
-    '@keyframes logoEffect': {
+    '@keyframes appBarEffect': {
       '0%': {
         filter: 'hue-rotate(45deg)',
       },
