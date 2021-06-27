@@ -1,24 +1,20 @@
-import * as ReactRedux from 'react-redux';
-
 import { act, renderHook } from '@testing-library/react-hooks';
-import { useSignIn } from 'molecules/usersActivity/signIn/hooks/useSignIn';
+import { useSignIn } from '../../hooks/useSignIn';
+import { UnitTestWrapper } from 'utils/unitTest/unitTestWrapper';
 
-import { StoreProvider } from '../../../utils/unitTest/storeProvider';
-import * as checkEmailUtils from '../../../utils/validation/checkEmail';
-import * as checkPasswordUtils from '../../../utils/validation/checkPassword';
+import * as checkEmailUtils from 'utils/validation/checkEmail';
+import * as checkPasswordUtils from 'utils/validation/checkPassword';
 
 describe('hooks/useSignIn', () => {
-  let spyOnDispatch;
   let spyOnCheckEmailUtils;
   let spyOnCheckPasswordUtils;
   let testedHook;
   beforeEach(() => {
     testedHook = renderHook(() => useSignIn(), {
-      wrapper: StoreProvider,
+      wrapper: UnitTestWrapper,
     }).result;
     spyOnCheckEmailUtils = jest.spyOn(checkEmailUtils, 'checkEmail');
     spyOnCheckPasswordUtils = jest.spyOn(checkPasswordUtils, 'checkPassword');
-    spyOnDispatch = jest.spyOn(ReactRedux, 'useDispatch');
   });
   afterEach(() => {
     jest.clearAllMocks();
@@ -74,7 +70,6 @@ describe('hooks/useSignIn', () => {
 
       expect(spyOnCheckEmailUtils).toHaveBeenCalled();
       expect(spyOnCheckPasswordUtils).toHaveBeenCalled();
-      expect(spyOnDispatch).toHaveBeenCalled();
     });
   });
 });

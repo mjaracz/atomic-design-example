@@ -1,9 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
 import { ValidationError } from 'atoms/textFields/types';
-// import { postSignUp } from 'molecules/usersActivity/signUp/redux/actions';
-import { RootState } from 'redux/types';
 import { checkEmail, checkNameSurname, checkPassword } from 'utils/validation';
 
 export const useSignUp = () => {
@@ -28,8 +24,6 @@ export const useSignUp = () => {
   const [surnameError, setSurnameError] = useState<ValidationError>({
     isError: false,
   });
-  // const { signUp } = useSelector((state: RootState) => state);
-  const dispatch = useDispatch();
 
   const saveEmail = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.value) setEmail(event.target.value);
@@ -49,7 +43,7 @@ export const useSignUp = () => {
 
   const sendFormData = async () => {
     if (validateForm()) {
-      // await dispatch(postSignUp({ username: email, password, name, surname }));
+      // send validate user form data to api
     }
   };
   const validateForm = () => {

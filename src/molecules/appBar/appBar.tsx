@@ -7,7 +7,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Home from '@material-ui/icons/Home';
 import MailIcon from '@material-ui/icons/Mail';
@@ -15,6 +15,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
 
 import { ButtonHome } from 'atoms/buttons';
 import { useHomeAppBar } from 'molecules/appBar/hooks/useHomeAppBar';
@@ -67,11 +68,11 @@ export function CustomAppBar() {
       open={isPagesMenuOpen}
       transformOrigin={{ vertical: 'top', horizontal: 'right' }}
     >
-      <MenuItem>
-        <span>handle pages menu</span>
+      <MenuItem component={Link} to='/'>
+        Home Page
       </MenuItem>
-      <MenuItem >
-        <ButtonHome label="sign up" path="/sign-up" />
+      <MenuItem component={Link} to='/entites'>
+        Entities Page
       </MenuItem>
     </Menu>
   );
@@ -134,13 +135,12 @@ export function CustomAppBar() {
             aria-label="open drawer"
             className={styles.menuButton}
             color="inherit"
+            component={Link}
             edge="start"
+            to="/"
           >
             <Home />
           </IconButton>
-          <Typography className={styles.title} noWrap variant="h6">
-            Home
-          </Typography>
           <div className={styles.search}>
             <div className={styles.searchIcon}>
               <SearchIcon />

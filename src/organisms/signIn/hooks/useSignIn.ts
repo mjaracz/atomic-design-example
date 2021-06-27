@@ -1,13 +1,9 @@
 import { ChangeEvent, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { ValidationError } from 'atoms/textFields/types';
-// import { postSignIn } from 'molecules/usersActivity/signIn/redux/actions';
-import { RootState } from 'redux/types';
 import { checkEmail, checkPassword } from 'utils/validation';
 
 export const useSignIn = () => {
-  const [goToProfile, setGoToProfile] = useState(false);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [passwordError, setPasswordError] = useState<ValidationError>({
@@ -16,21 +12,6 @@ export const useSignIn = () => {
   const [emailError, setEmailError] = useState<ValidationError>({
     isError: false,
   });
-  // const dispatch = useDispatch();
-  // const {
-  //   signIn: { jwtToken, error, loading },
-  // } = useSelector((state: RootState) => state);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   if (error === 'Unauthorized') {
-  //     setEmailError({ isError: true, message: 'email not found' });
-  //     setPasswordError({
-  //       isError: true,
-  //       message: 'or incorrect password try again',
-  //     });
-  //   }
-  // }, [error]);
 
   const saveEmail = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.value) setEmail(event.target.value);
@@ -41,8 +22,7 @@ export const useSignIn = () => {
 
   const sendSignInReq = async () => {
     if (checkBeforeSend()) {
-      // await dispatch(postSignIn({ username: email, password }));
-      await setGoToProfile(true);
+      // send user validate data to api
     }
   };
   const checkBeforeSend = () => {
@@ -60,6 +40,5 @@ export const useSignIn = () => {
     email,
     setEmailError,
     setPasswordError,
-    goToProfile,
   };
 };

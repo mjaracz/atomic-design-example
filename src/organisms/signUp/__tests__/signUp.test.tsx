@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import { SignUp } from 'molecules/usersActivity/signUp/index';
-
 import { UnitTestWrapper } from 'utils/unitTest/unitTestWrapper';
+import { SignUp } from '../signUp';
+
 
 describe('<SignUp/>', () => {
   describe('when hook useSignUp is call', () => {
