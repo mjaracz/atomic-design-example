@@ -10,7 +10,7 @@ export const useStyle = makeStyles((theme: Theme) =>
     },
     '@keyframes appBarEffect': {
       '0%': {
-        filter: 'hue-rotate(45deg)',
+        filter: 'hue-rotate(61deg)',
       },
       '100%': {
         filter: 'hue-rotate(0)',
