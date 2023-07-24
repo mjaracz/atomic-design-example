@@ -1,6 +1,6 @@
 import { MouseEvent, useState } from 'react';
 
-export const useHomeAppBar = () => {
+export const useCustomAppBar = () => {
   const [anchorProfile, setAnchorProfile] = useState<null | HTMLElement>(null);
   const [anchorPages, setAnchorPages] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null);

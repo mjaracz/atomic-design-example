@@ -1,4 +1,4 @@
-import { createStyles, fade, Theme } from '@material-ui/core/styles';
+import { alpha, createStyles, Theme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/styles';
 
 export const useStyle = makeStyles((theme: Theme) =>
@@ -6,15 +6,6 @@ export const useStyle = makeStyles((theme: Theme) =>
     header: {
       width: '100vw',
       backgroundColor: '#2962ff',
-      animation: '$appBarEffect infinite 1.5s linear'
-    },
-    '@keyframes appBarEffect': {
-      '0%': {
-        filter: 'hue-rotate(61deg)',
-      },
-      '100%': {
-        filter: 'hue-rotate(0)',
-      },
     },
     grow: {
       flexGrow: 1,
@@ -31,9 +22,9 @@ export const useStyle = makeStyles((theme: Theme) =>
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.white, 0.15),
+      backgroundColor: alpha(theme.palette.common.white, 0.15),
       '&:hover': {
-        backgroundColor: fade(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.common.white, 0.25),
       },
       marginRight: theme.spacing(2),
       marginLeft: '26vw',

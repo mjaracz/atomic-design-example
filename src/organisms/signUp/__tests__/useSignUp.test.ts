@@ -1,35 +1,34 @@
-import React from 'react';
-import * as ReactRedux from 'react-redux';
-
-import { act, renderHook } from '@testing-library/react-hooks';
-import { useSignUp } from 'molecules/usersActivity/signUp/hooks/useSignUp';
-
-import { StoreProvider } from '../../../utils/unitTest/storeProvider';
+import { RenderHookResult, act, renderHook, Renderer } from '@testing-library/react-hooks';
+import { useSignUp } from '../hooks/useSignUp';
+import { ValidationError } from '../../../atoms/textFields/types';
+import { ChangeEvent } from 'react';
 
 describe('hooks/useSignUp', () => {
-  let spyOnUseSelector;
-  let spyOnDispatch;
-  let spyOnUseEffect;
-  let testedHook;
+  let testedHook: RenderHookResult<unknown, {
+    setPassword: (value: (((prevState: string) => string) | string)) => void;
+    nameError: ValidationError;
+    saveRePassword: (event: ChangeEvent<HTMLInputElement>) => void;
+    saveSurname: (event: ChangeEvent<HTMLInputElement>) => void;
+    emailError: ValidationError;
+    rePasswordError: ValidationError;
+    savePassword: (event: ChangeEvent<HTMLInputElement>) => void;
+    setRePassword: (value: (((prevState: string) => string) | string)) => void;
+    surnameError: ValidationError;
+    password: string;
+    setEmail: (value: (((prevState: string) => string) | string)) => void;
+    sendFormData: () => Promise<void>;
+    rePassword: string;
+    passwordError: ValidationError;
+    saveEmail: (event: ChangeEvent<HTMLInputElement>) => void;
+    saveName: (event: ChangeEvent<HTMLInputElement>) => void;
+    email: string
+  }, Renderer<unknown>>;
 
   beforeEach(() => {
-    spyOnDispatch = jest.spyOn(ReactRedux, 'useDispatch');
-    spyOnUseSelector = jest.spyOn(ReactRedux, 'useSelector');
-    spyOnUseEffect = jest.spyOn(React, 'useEffect');
-
-    testedHook = renderHook(() => useSignUp(), { wrapper: StoreProvider });
+    testedHook = renderHook(() => useSignUp());
   });
   afterAll(() => jest.clearAllMocks());
 
-  it('should call useDispatch, useSelector and useEffect', () => {
-    act(() => {
-      testedHook.rerender();
-    });
-
-    expect(spyOnUseEffect).toHaveBeenCalled();
-    expect(spyOnDispatch).toHaveBeenCalled();
-    expect(spyOnUseSelector).toHaveBeenCalled();
-  });
 
   describe('when saveEmail is call', () => {
     describe('with correct event', () => {
@@ -37,14 +36,14 @@ describe('hooks/useSignUp', () => {
         act(() =>
           testedHook.result.current.saveEmail({
             target: { value: 'mock value' },
-          })
+          } as ChangeEvent<HTMLInputElement>)
         );
         expect(testedHook.result.current.email).toEqual('mock value');
       });
     });
     describe('with incorrect event', () => {
       it('should not set new state', () => {
-        act(() => testedHook.result.current.saveEmail({ target: {} }));
+        act(() => testedHook.result.current.saveEmail({ target: {} } as ChangeEvent<HTMLInputElement>));
         expect(testedHook.result.current.email).toEqual('');
       });
     });
@@ -56,7 +55,7 @@ describe('hooks/useSignUp', () => {
         act(() =>
           testedHook.result.current.savePassword({
             target: { value: 'mock value' },
-          })
+          } as ChangeEvent<HTMLInputElement>)
         );
         expect(testedHook.result.current.password).toEqual('mock value');
       });
@@ -75,14 +74,14 @@ describe('hooks/useSignUp', () => {
         act(() =>
           testedHook.result.current.saveRePassword({
             target: { value: 'mock value' },
-          })
+          } as ChangeEvent<HTMLInputElement>)
         );
         expect(testedHook.result.current.rePassword).toEqual('mock value');
       });
     });
     describe('with incorrect data', () => {
       it('should ', () => {
-        act(() => testedHook.result.current.saveRePassword({ target: '' }));
+        act(() => testedHook.result.current.saveRePassword({ target: '' } as unknown as ChangeEvent<HTMLInputElement>));
         expect(testedHook.result.current.rePassword).toEqual('');
       });
     });

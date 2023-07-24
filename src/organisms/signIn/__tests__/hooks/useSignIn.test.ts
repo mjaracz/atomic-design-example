@@ -6,8 +6,8 @@ import * as checkEmailUtils from 'utils/validation/checkEmail';
 import * as checkPasswordUtils from 'utils/validation/checkPassword';
 
 describe('hooks/useSignIn', () => {
-  let spyOnCheckEmailUtils;
-  let spyOnCheckPasswordUtils;
+  let spyOnCheckEmailUtils: jest.SpyInstance;
+  let spyOnCheckPasswordUtils: jest.SpyInstance;
   let testedHook;
   beforeEach(() => {
     testedHook = renderHook(() => useSignIn(), {
@@ -22,8 +22,8 @@ describe('hooks/useSignIn', () => {
 
   describe('saveEmail function', () => {
     describe('when got correct event', () => {
-      it('should set new email value', () => {
-        act(() => {
+      it('should set new email value', async () => {
+        await act(() => {
           testedHook.current.saveEmail({
             target: { value: 'example@mail.com' },
           });
@@ -32,8 +32,8 @@ describe('hooks/useSignIn', () => {
       });
     });
     describe('when got incorrect event', () => {
-      it('should not set new email value', () => {
-        act(() => {
+      it('should not set new email value', async () => {
+        await act(() => {
           testedHook.current.saveEmail({ target: 'incorrect event' });
         });
         expect(testedHook.current.email).toEqual('');
@@ -43,8 +43,8 @@ describe('hooks/useSignIn', () => {
 
   describe('savePassword function', () => {
     describe('when got correct event', () => {
-      it('should set new password value', () => {
-        act(() => {
+      it('should set new password value', async () => {
+        await act(() => {
           testedHook.current.savePassword({
             target: { value: 'exampleMockPassword' },
           });
@@ -53,8 +53,8 @@ describe('hooks/useSignIn', () => {
       });
     });
     describe('when got incorrect event', () => {
-      it('should not set new email value', () => {
-        act(() => {
+      it('should not set new email value', async () => {
+        await act(() => {
           testedHook.current.savePassword({ target: 'incorrect event' });
         });
         expect(testedHook.current.password).toEqual('');
@@ -63,8 +63,11 @@ describe('hooks/useSignIn', () => {
   });
 
   describe('sendSignInReq function', () => {
-    it('should call checkEmail, checkPassword unitTest', () => {
-      act(() => {
+    it('should check email and password', async () => {
+      spyOnCheckEmailUtils.mockImplementation(() => ({ isError: true, message: 'email is incorrect' }));
+      spyOnCheckEmailUtils.mockImplementation(() => ({ isError: true, message: 'email is incorrect' }));
+      await act(() => {
+        testedHook.current.checkBeforeSend();
         testedHook.current.sendSignInReq();
       });
 

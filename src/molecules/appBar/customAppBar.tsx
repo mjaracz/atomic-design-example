@@ -18,7 +18,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
 import { ButtonHome } from 'atoms/buttons';
-import { useHomeAppBar } from 'molecules/appBar/hooks/useHomeAppBar';
+import { useCustomAppBar } from 'molecules/appBar/hooks/useCustomAppBar';
 import { useStyle } from './useStyles';
 
 export function CustomAppBar() {
@@ -36,7 +36,7 @@ export function CustomAppBar() {
     handleMobileMenuOpen,
     handleProfileMenuOpen,
     handlePagesMenuOpen,
-  } = useHomeAppBar();
+  } = useCustomAppBar();
 
   const menuId = 'primary-search-account-menu';
   const renderProfileMenu = (

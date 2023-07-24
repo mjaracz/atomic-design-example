@@ -6,12 +6,12 @@ import { EntitesPage } from '../entitesPage';
 describe('<EntitesPage />', () => {
   describe('where wrap component with redux and theme provider', () => {
     it('should correctly match the snapshot', () => {
-      const { baseComponent } = render(
+      const { baseElement } = render(
         <UnitTestWrapper>
           <EntitesPage />
         </UnitTestWrapper>
       );
-      expect(baseComponent).toMatchSnapshot();      
+      expect(baseElement).toMatchSnapshot();      
     });
   });
 });

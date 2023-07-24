@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import { SignIn } from 'molecules/usersActivity/signIn/singIn';
+import { SignIn } from '../singIn';
 import { UnitTestWrapper } from 'utils/unitTest/unitTestWrapper';
 
 describe('<FormField/>', () => {
